@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffa500;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sapper.controllers.SettingsController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutY="246.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Button fx:id="menu" layoutX="511.0" layoutY="361.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #423189; -fx-border-color: #000000;" text="меню" textFill="WHITE" />
+      <Button fx:id="save" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="94.0" style="-fx-background-color: #423189; -fx-border-color: #000000;" text="сохранить" textFill="WHITE" />
+      <Text layoutX="14.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Укажите размер окна игры" wrappingWidth="237.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="14.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="По X:" wrappingWidth="48.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="160.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="По Y:" wrappingWidth="48.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="stageSizeX" layoutX="61.0" layoutY="45.0" prefHeight="26.0" prefWidth="94.0" promptText="100" style="-fx-font-size: 14;" />
+      <TextField fx:id="stageSizeY" layoutX="210.0" layoutY="45.0" prefHeight="26.0" prefWidth="94.0" promptText="140" style="-fx-font-size: 14;" />
+      <Text layoutX="14.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Укажите количество клеток Xn*Yn" wrappingWidth="290.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="22.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Xn:" wrappingWidth="32.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="168.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Yn:" wrappingWidth="32.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="Xn" layoutX="54.0" layoutY="101.0" prefHeight="26.0" prefWidth="94.0" promptText="3" style="-fx-font-size: 14;" />
+      <TextField fx:id="Yn" layoutX="200.0" layoutY="101.0" prefHeight="26.0" prefWidth="94.0" promptText="3" style="-fx-font-size: 14;" />
+      <Text layoutX="14.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Всего клеток:" wrappingWidth="113.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="14.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Укажите количество мин:" wrappingWidth="217.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="sizeMines" layoutX="231.0" layoutY="174.0" prefHeight="26.0" prefWidth="94.0" promptText="&lt;Xn*Yn" style="-fx-font-size: 14;" />
+      <TextField fx:id="sizeCell" editable="false" layoutX="129.0" layoutY="136.0" prefHeight="26.0" prefWidth="237.0" promptText="Xn*Yn" style="-fx-font-size: 14;" />
+      <Text layoutX="14.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Укажите число попыток на игру:" wrappingWidth="290.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="sizeAttempts" layoutX="286.0" layoutY="211.0" promptText="&lt;=mines" style="-fx-font-size: 14;" />
+      <TextField fx:id="nameUser" layoutX="134.0" layoutY="346.0" prefHeight="44.0" prefWidth="356.0" promptText="Введите ваше имя" style="-fx-background-color: #423189; -fx-border-color: #000000; -fx-font-size: 20;">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </TextField>
+      <TitledPane expanded="false" layoutY="238.0" prefHeight="109.0" prefWidth="600.0" text="Информация">
+         <content>
+            <TextArea editable="false" prefHeight="83.0" prefWidth="593.0" text="Минимальный размер клетки 10*10. Так же при указании размера окна учитывайте, что программа делает отступ сверху вниз(40), для таймера, количества оставшихся мин, кнопки Reset и Menu. И, учитывая размер этих объектов длина по X будет 200 минимум. Количество мин не может быть больше или равным количеству клеток. Сохранить нельзя, если кастомные настройки указаны неверно(об этом сигнализируют пометки. Например: попробуйте ввести букву в любое поле). Если пометок нет - это ещё не значит, что всё в порядке! Окончательно можно убедиться в правильности введёных данных при нажатии кнопки &quot;сохранить&quot; - она загорится красным, если что-то пошло не так, и зелёным, сигнализирующем, что всё ок! Если хотите играть в рейтинговом режиме укажите своё имя и выберите любой не кастомный уровень." wrapText="true" />
+         </content>
+      </TitledPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="89.0" layoutX="439.0" layoutY="39.0" stroke="BLACK" strokeType="INSIDE" width="147.0" />
+      <Text fx:id="errorSizeStage" layoutX="304.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="136.0000000000001" />
+      <Text fx:id="errorSizeCell" layoutX="298.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="136.00000000000023" />
+      <Text fx:id="errorSizeMines" layoutX="325.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="252.0" />
+      <Text fx:id="errorSizeAttempts" layoutX="459.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="127.0" />
+      <TitledPane expanded="false" layoutX="439.0" layoutY="14.0" prefHeight="76.0" prefWidth="147.0" text="Уровни">
+         <content>
+            <VBox prefHeight="154.0" prefWidth="172.0">
+               <children>
+                  <RadioButton fx:id="lvlNumber1" mnemonicParsing="false" text="№1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="levels" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="lvlNumber2" mnemonicParsing="false" text="№2" toggleGroup="$levels" />
+                  <RadioButton fx:id="lvlNumber3" mnemonicParsing="false" text="№3" toggleGroup="$levels" />
+                  <RadioButton fx:id="lvlNumberCustom" mnemonicParsing="false" selected="true" text="Кастомный" toggleGroup="$levels" />
+               </children>
+            </VBox>
+         </content>
+      </TitledPane>
+      <Button fx:id="standardSetting" layoutX="441.0" layoutY="135.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="147.0" style="-fx-background-color: #423189; -fx-border-color: #000000;" text="standard settings" textFill="WHITE" />
+      <Button fx:id="currentSetting" layoutX="441.0" layoutY="169.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="147.0" style="-fx-background-color: #423189; -fx-border-color: #000000;" text="current settings" textFill="WHITE" />
+   </children>
+</AnchorPane>
